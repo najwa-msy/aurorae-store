@@ -18,7 +18,7 @@ body {
 .shop-header {
   background: #faf7f5;
   border-bottom: 1px solid #e6cfd1;
-  padding: 25px 40px; /* HEADER DIPERBESAR */
+  padding: 30px 45px; /* HEADER DIPERBESAR */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -39,11 +39,11 @@ body {
 }
 
 .header-left .logo {
-  height: 56px; /* LOGO DIPERBESAR */
+  height: 100px; /* LOGO DIPERBESAR */
 }
 
 .header-left .brand {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 600;
   color: #3a2f33;
 }

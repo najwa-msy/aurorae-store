@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Aurorae Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="shop-header">
+  <div class="header-content">
+    
+    <div class="header-left">
+      <img src="logo.png" class="logo">
+      <span class="brand">Aurorae</span>
+    </div>
+
+    <div class="header-center">
+      <input 
+        type="text"
+        id="searchInput"
+        placeholder="Cari produk skincare & bodycare..."
+        onkeyup="searchProduct()"
+      >
+    </div>
+
+    <div class="header-right">
+      <button id="cartBtn" onclick="scrollToCart()">🛒</button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- SKINCARE -->
+<section>
+  <h2 class="title">Skincare</h2>
+
+  <div class="category-banner">
+    <img src="SKINCARE.png" alt="Skincare Products">
+  </div>
+
+  <div class="products">
+    <div class="product">
+      <img src="face.png" alt="Facial Wash">
+      <h3>Facial Wash</h3>
+      <p>Rp 75.000</p>
+      <button onclick="addToCart('Facial Wash',75000)">Tambah</button>
+    </div>
+
+    <div class="product">
+      <img src="serum.png" alt="Serum">
+      <h3>Serum</h3>
+      <p>Rp 60.000</p>
+      <button onclick="addToCart('Serum',60000)">Tambah</button>
+    </div>
+
+    <div class="product">
+      <img src="moist.png" alt="Moisturizer">
+      <h3>Moisturizer</h3>
+      <p>Rp 95.000</p>
+      <button onclick="addToCart('Moisturizer',95000)">Tambah</button>
+    </div>
+
+    <div class="product">
+      <img src="sun.png" alt="Sunscreen">
+      <h3>Sunscreen</h3>
+      <p>Rp 78.000</p>
+      <button onclick="addToCart('Sunscreen',78000)">Tambah</button>
+    </div>
+  </div>
+</section>
+
+<!-- BODYCARE -->
+<section>
+  <h2 class="title">Bodycare</h2>
+
+  <div class="category-banner">
+    <img src="BODYCARE.png" alt="Bodycare Products">
+  </div>
+
+  <div class="products">
+    <div class="product">
+      <img src="lotion.png" alt="Body Lotion">
+      <h3>Body Lotion</h3>
+      <p>Rp 50.000</p>
+      <button onclick="addToCart('Body Lotion',50000)">Tambah</button>
+    </div>
+
+    <div class="product">
+      <img src="wash.png" alt="Body Wash">
+      <h3>Body Wash</h3>
+      <p>Rp 85.000</p>
+      <button onclick="addToCart('Body Wash',85000)">Tambah</button>
+    </div>
+
+    <div class="product">
+      <img src="scrub.png" alt="Body Scrub">
+      <h3>Body Scrub</h3>
+      <p>Rp 85.500</p>
+      <button onclick="addToCart('Body Scrub',85500)">Tambah</button>
+    </div>
+  </div>
+</section>
+
+<!-- CART -->
+<section id="cart">
+  <h2 class="title">Keranjang Belanja</h2>
+  <div id="cartItems"></div>
+  <h3>Total: Rp <span id="total">0</span></h3>
+  <button class="checkout" onclick="checkout()">Checkout</button>
+  </section>
+
+  <section id="payment" style="display:none;">
+  <h2 class="title">Metode Pembayaran</h2>
+
+  <div class="payment-methods">
+    <label>
+      <input type="radio" name="payment" value="E-Wallet">
+      E-Wallet (OVO / DANA / GoPay)
+    </label>
+
+    <label>
+      <input type="radio" name="payment" value="Transfer Bank">
+      Transfer Bank (BCA / BRI / Mandiri)
+    </label>
+
+    <label>
+      <input type="radio" name="payment" value="Virtual Account">
+      Virtual Account
+    </label>
+
+    <label>
+      <input type="radio" name="payment" value="Minimarket">
+      Indomaret / Alfamart
+    </label>
+  </div>
+
+  <button onclick="processPayment()">Bayar Sekarang</button>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback">
+  <h2 class="title">Ulasan Pelanggan</h2>
+
+  <div class="feedback-form">
+    <input type="text" id="fbName" placeholder="Nama kamu">
+    
+    <select id="fbRating">
+      <option value="">Rating</option>
+      <option value="5">⭐⭐⭐⭐⭐ - Sangat Puas</option>
+      <option value="4">⭐⭐⭐⭐ - Puas</option>
+      <option value="3">⭐⭐⭐ - Cukup</option>
+      <option value="2">⭐⭐ - Kurang</option>
+      <option value="1">⭐ - Tidak Puas</option>
+    </select>
+
+    <textarea id="fbMessage" placeholder="Tulis ulasan kamu..."></textarea>
+
+    <button onclick="submitFeedback()">Kirim Ulasan</button>
+  </div>
+
+  <div id="feedbackList"></div>
+</section>
+
+<footer>
+  © 2026 Aurorae Store
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
